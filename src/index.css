@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --primary: #667eea;
+  --primary-gradient: linear-gradient(to right, #667eea, #764ba2);
+  --secondary: #00f260;
+  --secondary-gradient: linear-gradient(to right, #0575E6, #021B79);
+  --text-main: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --error: #ff4b4b;
+  --success: #00c851;
+  --font-main: 'Outfit', sans-serif;
+  --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+}
+
+.btn {
+  background: var(--primary-gradient);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+}
+
+.input-field {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 1rem;
+  color: white;
+  width: 100%;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #fff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
